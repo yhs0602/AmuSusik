@@ -144,27 +144,27 @@ def randomTerm(depthrem):
 
 
 if __name__ == '__main__':
-    exprs = [randomTerm(20)]
-    exprs += [randomStatement(13), randomStatementEnd(8)]
-    exprs2 = [randomTerm(22), randomStatementEnd(8)]
+    exprs = [randomTerm(3)]
+    exprs += [randomStatement(3), randomStatementEnd(3)]
+    # exprs2 = [randomTerm(22), randomStatementEnd(8)]
     with open("out.tex", "wt") as f:
         f.write("\\documentclass{article}\n")
         f.write("\\usepackage{amsmath}\n")
         f.write("\\usepackage{amsfonts}\n")
         f.write("\\begin{document}\n")
-        f.write("\\section{Problem 1.}\n")
-        f.write("Suppose that")
+        # f.write("\\section{Problem 1.}\n")
+        # f.write("Suppose that")
         f.write("$$\n")
         for expr in exprs:
             print(expr)
             f.write(str(expr))
         f.write("\n$$\n")
-        f.write("Prove that")
-        f.write("$$\n")
-        for expr in exprs2:
-            print(expr)
-            f.write(str(expr))
-        f.write("\n$$\n")
+        # f.write("Prove that")
+        # f.write("$$\n")
+        # for expr in exprs2:
+        #     print(expr)
+        #     f.write(str(expr))
+        # f.write("\n$$\n")
         f.write("\n\\end{document}")
     os.system("pdflatex out.tex")
     os.system("rm out.log")
